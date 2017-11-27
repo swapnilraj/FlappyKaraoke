@@ -17,7 +17,7 @@ function Bird() {
   }
 
   this.up = function(level) {
-     this.velocity += this.lift * level; 
+     this.velocity += this.lift; 
   }
 
   this.update = function() {

@@ -39,11 +39,7 @@ function draw() {
     for (var i = pipes.length-1; i >= 0; i--) {
         pipes[i].show();
     
-    if (score > 30) {
-      pipes[i].update(score, 10, 100);
-    } else {
-      pipes[i].update(score, speed, 100);
-    }
+      pipes[i].update(score, speed, 200);
 
     if (pipes[i].offscreen()) {
       pipes.splice(i, 1);
