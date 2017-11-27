@@ -11,19 +11,33 @@ var count = 0;
 var speed = 2;
 var pipes = [];
 
+var mic, recorder, soundFile;
+var called = false;
+
+var minThreshHold = 0;
+var midThreshHold = 0.25;
+
 function setup() {
   createCanvas(400, 600);
   bird = new Bird();
   pipes.push(new Pipe());
+
+    mic = new p5.AudioIn();
+    mic.start();
+
+    recorder = new p5.SoundRecorder();
+    recorder.setInput(mic);
+
+    soundFile = new p5.SoundFile();
+    recorder.record(soundFile);
 }
 
 function draw() {
   background(0);
+        if (alive) {
 
-  if (alive) {
-
-  for (var i = pipes.length-1; i >= 0; i--) {
-    pipes[i].show();
+    for (var i = pipes.length-1; i >= 0; i--) {
+        pipes[i].show();
     
     if (score > 30) {
       pipes[i].update(score, 10, 100);
@@ -46,6 +60,12 @@ function draw() {
 
   }
 
+    var vol = mic.getLevel();
+     console.log(vol);
+      if (vol > midThreshHold) {
+        bird.up(vol);
+      }
+
   bird.update();
   bird.show();
   textSize(64);
@@ -55,20 +75,14 @@ function draw() {
   if (frameCount % 100 == 0) {
     pipes.push(new Pipe());
   }
-}
-  if (!alive) {
+    }
+        else if (!alive) {
     textSize(64);
     text(score.toString(), height/2, 64);
     fill(0, 102, 153);
-  }
-
-}
-
-function keyPressed() {
-  if (key == ' ') {
-    bird.up();
-    //console.log("SPACE");
+      if (!called){
+        recorder.stop();
+        called = true;
+      }
   }
 }
-
-

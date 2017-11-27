@@ -8,7 +8,7 @@ function Bird() {
   this.x = 64;
 
   this.gravity = 0.6;
-  this.lift = -15;
+  this.lift = -5;
   this.velocity = 0;
 
   this.show = function() {
@@ -16,8 +16,8 @@ function Bird() {
     ellipse(this.x, this.y, 32, 32);
   }
 
-  this.up = function() {
-    this.velocity += this.lift;
+  this.up = function(level) {
+     this.velocity += this.lift * level; 
   }
 
   this.update = function() {
