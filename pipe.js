@@ -2,7 +2,7 @@
 // http://codingrainbow.com
 // http://patreon.com/codingrainbow
 // Code for: https://youtu.be/cXgA1d_E-jY&
-var space = 400
+var space = 0;
 var stop = false;
 function Pipe() {
   this.top = random(height/2);
@@ -37,14 +37,6 @@ function Pipe() {
   }
 
   this.update = function(score, speed, space) {
-    if (score > 10) {
-      space = 200;
-    } else if (score > 20) {
-      space = 100;
-    } else if (score > 30) {
-      this.speed = 10;
-    }
-
     this.x -= speed;
 
     this.space = space;
