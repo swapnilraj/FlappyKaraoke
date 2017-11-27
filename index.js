@@ -4,7 +4,7 @@
  */
 handleClick = function(e) {
   if(e.target.className == 'songs') {
-    const kar = 'alex.html';
+    const kar = 'karaoke.html';
     const index = getIndex(e.target);
     window.open(`location:8000/${kar}?q=${index}`);
   }
