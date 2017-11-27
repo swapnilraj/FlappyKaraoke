@@ -1,6 +1,6 @@
 const songMap = {
 	"0" : "https://youtu.be/nMDXPAM8RwE",
-	"1" : "https://www.youtube.com/embed/71hqRT9U0wq",
+	"1" : "https://www.youtube.com/embed/71hqRT9U0wg",
 	"2" : "https://www.youtube.com/watch?v=jLA_OvsSGQs",
 	"3" : "https://www.youtube.com/watch?v=s6z1xazpGJ4",
 	"4" : "https://www.youtube.com/watch?v=wsB1_UGiVoU",
