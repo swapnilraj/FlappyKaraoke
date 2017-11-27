@@ -1,3 +1,40 @@
-.song-list {
+
+body{
+	background-color: #d0e4fe;
+    text-align: center;
+}
+
+p{
+  font-family: 'Lobster', cursive;
+  
+}
+.container{
+	margin-top: 10px;
 
 }
+
+.Menu{
+	border-radius:20px;
+	background-color:#4588ba;
+	display: block;
+	margin: auto;
+	text-align: center;
+	width: 90%; 
+	padding-bottom: 10px;
+	padding-top: 10px;
+	
+}
+
+.songs{
+	border-radius:20px;
+	background-color:#4588ba;
+	display: block;
+	margin: auto;
+	text-align: center;
+	width: 90%; 
+	padding-bottom: 10px;
+	padding-top: 10px;
+	margin-bottom:10px; 
+}
+
+
