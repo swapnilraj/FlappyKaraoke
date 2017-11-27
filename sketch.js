@@ -11,6 +11,8 @@ var count = 0;
 var speed = 2;
 var pipes = [];
 
+var playing = false;
+
 var mic, recorder, soundFile;
 var called = false;
 
@@ -34,11 +36,11 @@ function setup() {
 
 function draw() {
   background(0);
-        if (alive) {
+    if (alive) {
 
     for (var i = pipes.length-1; i >= 0; i--) {
         pipes[i].show();
-    
+
       pipes[i].update(score, speed, 200);
 
     if (pipes[i].offscreen()) {
@@ -67,7 +69,7 @@ function draw() {
   textSize(64);
   fill(0, 102, 153);
   text(score.toString(), height/2, 64);
-  
+
   if (frameCount % 100 == 0) {
     pipes.push(new Pipe());
   }
